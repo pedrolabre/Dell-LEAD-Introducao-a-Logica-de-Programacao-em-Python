@@ -12,7 +12,8 @@ altura_float = float(altura)
 altura_ao_quadrado = altura_float * altura_float
 imc = peso_float / altura_ao_quadrado
 
-# Saída do resultado
-print(imc)
+# Conversão para string e saída formatada (desafio da oficina)
+imc_str = str(imc)
+print("\n" + nome + ", o seu IMC calculado é: " + imc_str)
 
 input("\nPressione Enter para encerrar...")
