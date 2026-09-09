@@ -31,4 +31,14 @@ for i in range(len(cursos)):
     porcentagem = (qtd_votos / total_votos) * 100
     print("- " + cursos[i] + ":", qtd_votos, "votos (" + str(porcentagem) + "%)")
 
+# Identificação do curso mais votado utilizando sorted(), indexação negativa [-1] e index()
+votos_ordenados = sorted(votos)
+maior_voto = votos_ordenados[-1]
+indice_vencedor = votos.index(maior_voto)
+curso_escolhido = cursos[indice_vencedor]
+
+# Exibição do curso escolhido pela votação
+print("\n--- Curso Escolhido ---")
+print("O curso escolhido pela votação foi:", curso_escolhido)
+
 input("\nPressione Enter para encerrar...")
