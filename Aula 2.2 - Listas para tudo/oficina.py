@@ -19,5 +19,16 @@ total_votos = len(respostas)
 # Exibição do cabeçalho e do total de votos
 print("--- Resultado da Pesquisa de Cursos ---")
 print("Total de votos apurados:", total_votos)
+print("\nVotação por curso:")
+
+# Lista para armazenar o número de votos de cada curso
+votos = []
+
+# Laço para contabilizar os votos de cada curso e calcular a porcentagem
+for i in range(len(cursos)):
+    qtd_votos = respostas.count(i)
+    votos.append(qtd_votos)
+    porcentagem = (qtd_votos / total_votos) * 100
+    print("- " + cursos[i] + ":", qtd_votos, "votos (" + str(porcentagem) + "%)")
 
 input("\nPressione Enter para encerrar...")
