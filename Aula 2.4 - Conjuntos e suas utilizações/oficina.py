@@ -55,4 +55,23 @@ print("--- Planejamento de Presentes de Casamento ---")
 print("Total de presentes desejados:", len(presentes))
 print("Conjunto de presentes:", presentes)
 
+# 1. Produtos oferecidos em ao menos uma loja (união dos conjuntos de todas as lojas)
+ao_menos_uma = loja1 | loja2 | loja3 | loja4
+
+# 2. Produtos oferecidos em todas as lojas (interseção dos conjuntos de todas as lojas)
+todas_as_lojas = loja1 & loja2 & loja3 & loja4
+
+# 3. Produtos não encontrados em nenhuma loja (diferença entre os presentes e os disponíveis)
+nenhuma_loja = presentes - ao_menos_uma
+
+# Exibição das respostas para as perguntas 1, 2 e 3
+print("\n1. Produtos oferecidos em ao menos uma loja:")
+print(ao_menos_uma)
+
+print("\n2. Produtos oferecidos em todas as lojas:")
+print(todas_as_lojas)
+
+print("\n3. Produtos não encontrados em nenhuma loja:")
+print(nenhuma_loja)
+
 input("\nPressione Enter para encerrar...")
