@@ -37,8 +37,27 @@ while True:
     if continuar.lower() != 's':
         break
 
-# Resumo dos dados cadastrados
-print("\nCadastro concluído com sucesso!")
-print("Total de gêneros registrados:", len(livraria))
+# Módulo de apresentação dos livros disponíveis em loja
+print("\n--- Apresentação dos Livros Disponíveis em Loja ---")
+
+if len(livraria) == 0:
+    print("\nNenhum livro foi cadastrado na livraria.")
+else:
+    # Apresentação dos gêneros em ordem alfabética
+    for genero in sorted(livraria):
+        print("\n--- {} ---".format(genero))
+
+        # Apresentação dos subgêneros em ordem alfabética
+        for subgenero in sorted(livraria[genero]):
+            print("\n------ {} ------\n".format(subgenero))
+
+            # Exibição dos livros cadastrados no subgênero
+            for livro in livraria[genero][subgenero]:
+                print("Título: {} | Editora: {} | Cópias em loja: {} | Valor: R$ {:.2f}".format(
+                    livro['titulo'],
+                    livro['editora'],
+                    livro['copias'],
+                    livro['valor']
+                ))
 
 input("\nPressione Enter para encerrar...")
