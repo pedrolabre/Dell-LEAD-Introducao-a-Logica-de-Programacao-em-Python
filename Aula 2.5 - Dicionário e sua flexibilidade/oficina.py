@@ -51,9 +51,12 @@ else:
         for subgenero in sorted(livraria[genero]):
             print("\n------ {} ------\n".format(subgenero))
 
-            # Exibição dos livros cadastrados no subgênero
-            for livro in livraria[genero][subgenero]:
-                print("Título: {} | Editora: {} | Cópias em loja: {} | Valor: R$ {:.2f}".format(
+            # Ordenação dos livros pela quantidade disponível em loja com função lambda
+            livros_ordenados = sorted(livraria[genero][subgenero], key=lambda livro: livro['copias'])
+
+            # Exibição detalhada de cada livro ordenado por quantidade
+            for livro in livros_ordenados:
+                print("Título: {} | Editora: {} | Cópias em loja: {} | Valor: R$ {:.2f}\n".format(
                     livro['titulo'],
                     livro['editora'],
                     livro['copias'],
