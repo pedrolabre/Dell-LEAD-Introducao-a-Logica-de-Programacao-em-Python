@@ -52,4 +52,29 @@ def imprimir_eventos(eventos, de_data=(1, 1, 1), ate_data=(9999, 12, 31)):
             print("{} - {}: {}".format(data_formatada, hora_formatada, descricao))
 
 
+# Dados da agenda de eventos
+agenda = [
+    ((2020, 1, 13), (11, 50), 'Renovar identidade'),
+    ((2020, 1, 15), (16, 30), 'Fazer compras'),
+    ((2020, 1, 25), (8, 45), 'Autenticar documentos'),
+    ((2020, 2, 29), (14, 15), 'Prestar concurso'),
+    ((2020, 3, 15), (17, 50), 'Buscar bolo pro aniversário da vovó'),
+    ((2020, 3, 17), (13, 20), 'Consulta de revisão com dentista')
+]
+
+# Execução e testes de impressão com diferentes passagens de parâmetros
+print("--- Sistema de Gerenciamento de Eventos da Agenda ---")
+
+print("\n--- Eventos a partir de 20/01/2020 (data inicial posicional) ---")
+imprimir_eventos(agenda, (2020, 1, 20))
+
+print("\n--- Eventos até 15/03/2020 (data final nomeada) ---")
+imprimir_eventos(agenda, ate_data=(2020, 3, 15))
+
+print("\n--- Todos os eventos cadastrados (parâmetros padrão) ---")
+imprimir_eventos(agenda)
+
+print("\n--- Eventos no intervalo entre 15/01/2020 e 29/02/2020 ---")
+imprimir_eventos(agenda, (2020, 1, 15), (2020, 2, 29))
+
 input("\nPressione Enter para encerrar...")
